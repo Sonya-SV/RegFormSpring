@@ -1,4 +1,3 @@
-
 <div class="header">
     <nav class="navbar nav-tabs fixed-top navbar-light" id="nav-tab" role="tablist">
         <div class="container-fluid">

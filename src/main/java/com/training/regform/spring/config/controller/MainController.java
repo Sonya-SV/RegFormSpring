@@ -80,4 +80,15 @@ public class MainController {
         model.addAttribute("logout", logout);
         return "login";
     }
+
+//    @RequestMapping(value = "/locale", method = RequestMethod.GET)
+//    public String getLocalePage() {
+//        return "my-locale";
+//    }
+
+//    @RequestMapping("*")
+//    @ResponseBody
+//    public String fallbackMethod(){
+//        return "fallback method";
+//    }
 }
