@@ -6,7 +6,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import java.util.Collection;
 import java.util.Set;
 
@@ -27,29 +26,15 @@ public class User implements UserDetails {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Pattern(regexp = "^[a-zA-Z0-9]{3,20}$",
-            message = "Username  must  be  between  3  and  20  characters  long")
     @Column(name = "username", nullable = false)
     private String username;
 
-
-    @Pattern(regexp = "([А-ЩЬЮЯЇІЄҐа-щьюяїієґ']{3,20})|([A-Za-z]{3,20})",
-            message = "First name  must  be  between  3  and  20  characters  long")
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-
-    @Pattern(regexp = "([А-ЩЬЮЯЇІЄҐа-щьюяїієґ']{3,20})|([A-Za-z]{3,20})",
-            message = "Last  name must  be  between  3  and  20  characters  long")
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-
-//    @Pattern(regexp = "^(?=.*\\d)(?=.*[A-Za-z])[0-9a-zA-Z]{6,}$",
-//@Pattern(regexp = "^[a-zA-zА-ЩЬЮЯЇІЄҐа-щьюяїієґ0-9]{6,}$",
-//            message = "Password should contain at least 6 characters," +
-//            "at least 1 digit, and 1 letter")
-    @NotBlank(message = "Password cannot be empty")
     @Column(name = "password", nullable = false)
     private String password;
 

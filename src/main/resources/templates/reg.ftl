@@ -8,7 +8,7 @@
                         <h3 class="panel-title" style="display: inline-block">Registration</h3>
                     </div>
                     <div class="panel-body">
-                        <h3 style="color: red">${message!}</h3>
+<#--                        <h3 style="color: red">${message!}</h3>-->
                         <form action="/reg" method="post" autocomplete="off" novalidate
                               ng-submit="form.$valid ">
 
@@ -80,6 +80,7 @@
 <#--                                <#if passwordErrorDiffer??>-->
                                     <div class="text-danger">
                                     ${password2Error!}
+                                        ${passwordErrorDiffer!}
                                     </div>
 <#--                                </#if>-->
                             </div>

@@ -73,6 +73,7 @@ public class UserService implements UserDetailsService {
             userRepository.save(user);
         } catch (Exception ex) {
             log.info("{User is already exists}");
+            log.info(user.toString());
         }
     }
 }

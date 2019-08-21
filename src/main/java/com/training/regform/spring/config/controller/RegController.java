@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.Map;
 
 @Controller
 public class RegController {
@@ -27,22 +26,23 @@ public class RegController {
 
     @PostMapping("/reg")
     public String addUser(@Valid User user, BindingResult bindingResult, Model model) {
-        if(user.getPassword()!=null &&!user.getPassword().equals(user.getPassword2())) {
+//          TODO rewrite all if
+        if (user.getPassword() != null && !user.getPassword().equals(user.getPassword2())) {
             model.addAttribute("passwordErrorDiffer", "Passwords are different!");
-            if (bindingResult.hasErrors()) {
-                Map<String, String> errors = ValidController.getErrors(bindingResult);
-                model.mergeAttributes(errors);
-            }
             return "reg";
         }
-            User userFromDb = (User) userService.loadUserByUsername(user.getUsername());
+//        if (bindingResult.hasErrors()) {
+//            Map<String, String> errors = ValidController.getErrors(bindingResult);
+//            model.mergeAttributes(errors);
+//            return "reg";
+//        }
 
+        User userFromDb = (User) userService.loadUserByUsername(user.getUsername());
         if (userFromDb != null) {
             model.addAttribute("usernameError", "User is already exists");
             return "reg";
         }
         userService.saveNewUser(user);
-        return
-                "redirect:/login";
+        return "redirect:/login";
     }
 }
