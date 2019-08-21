@@ -11,6 +11,7 @@
                         <form name="form"  method="post" autocomplete="off" novalidate
                               ng-submit="form.$valid ">
 
+<#--                            TODO add check password in profile-->
                             <div class="form-group">
                                 <label id="exampleInputFirstNameLabel" for="firstName">First name</label>
                                 <input type="text"

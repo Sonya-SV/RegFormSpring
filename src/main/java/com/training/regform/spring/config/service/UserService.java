@@ -13,10 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -70,6 +67,7 @@ public class UserService implements UserDetailsService {
     }
 
     public void saveNewUser(User user) {
+        user.setRoles(Collections.singleton(Role.USER));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         try {
             userRepository.save(user);

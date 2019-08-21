@@ -12,6 +12,7 @@
                                 <#if isAdmin>
                                     <li><a href="/user">Users</a></li>
                                 </#if>
+<#--                                TODO FIX apearing profile while not valid form-->
                                 <#if user??>
                                     <li><a href="/profile">Profile</a></li>
                                 </#if>
